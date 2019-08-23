@@ -18,6 +18,7 @@ class _LoginSignUpPageState extends State<LoginSignUpPage> {
 
   String _email;
   String _password;
+  String _confirmPassword;
   String _errorMessage;
 
   // Initial form is login form
@@ -153,8 +154,10 @@ class _LoginSignUpPageState extends State<LoginSignUpPage> {
               _showLogo(),
               _showEmailInput(),
               _showPasswordInput(),
+              if (_formMode == FormMode.SIGNUP) _showConfirmPasswordInput(),
               _showPrimaryButton(),
               _showSecondaryButton(),
+              _showGoogleSignInButton(),
               _showErrorMessage(),
             ],
           ),
@@ -183,7 +186,8 @@ class _LoginSignUpPageState extends State<LoginSignUpPage> {
       tag: 'hero',
       child: Padding(
         padding: EdgeInsets.fromLTRB(0.0, 70.0, 0.0, 0.0),
-        child: CircleAvatar(
+        child: 
+        CircleAvatar(
           backgroundColor: Colors.transparent,
           radius: 48.0,
           child: Image.asset('assets/flutter-icon.png'),
@@ -230,6 +234,25 @@ class _LoginSignUpPageState extends State<LoginSignUpPage> {
     );
   }
 
+    Widget _showConfirmPasswordInput() {
+    return Padding(
+      padding: const EdgeInsets.fromLTRB(0.0, 15.0, 0.0, 0.0),
+      child: new TextFormField(
+        maxLines: 1,
+        obscureText: true,
+        autofocus: false,
+        decoration: new InputDecoration(
+            hintText: 'Confirm Password',
+            icon: new Icon(
+              Icons.lock,
+              color: Colors.grey,
+            )),
+        validator: (value) => _password != value.trim() ? 'Password doesn\'t match' : null,
+        onSaved: (value) => _confirmPassword = value.trim(),
+      ),
+    );
+  }
+
   Widget _showSecondaryButton() {
     return new FlatButton(
       child: _formMode == FormMode.LOGIN
@@ -261,5 +284,37 @@ class _LoginSignUpPageState extends State<LoginSignUpPage> {
             onPressed: _validateAndSubmit,
           ),
         ));
+  }
+
+    Widget _showGoogleSignInButton() {
+    return OutlineButton(
+      splashColor: Colors.grey,
+      onPressed: () async {
+          await widget.auth.signInWithGoogle();
+      },
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(40)),
+      highlightElevation: 0,
+      borderSide: BorderSide(color: Colors.grey),
+      child: Padding(
+        padding: const EdgeInsets.fromLTRB(0, 10, 0, 10),
+        child: Row(
+          mainAxisSize: MainAxisSize.min,
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            Image(image: AssetImage("assets/google_logo.png"), height: 20.0),
+            Padding(
+              padding: const EdgeInsets.only(left: 10),
+              child: Text(
+                'Sign in with Google',
+                style: TextStyle(
+                  fontSize: 12,
+                  color: Colors.grey,
+                ),
+              ),
+            )
+          ],
+        ),
+      ),
+    );
   }
 }
