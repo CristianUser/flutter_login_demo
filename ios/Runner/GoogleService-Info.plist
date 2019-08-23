@@ -2,39 +2,35 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>AD_UNIT_ID_FOR_BANNER_TEST</key>
-	<string>ca-app-pub-3940256099942544/2934735716</string>
-	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
-	<string>ca-app-pub-3940256099942544/4411468910</string>
 	<key>CLIENT_ID</key>
-	<string>503370235857-sh78fhp4s2r2qtqaajb1m32pkfd0l1s9.apps.googleusercontent.com</string>
+	<string>561908997057-5papifm0lhjk3lfvaq3hbnbpf2q5cpe6.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.503370235857-sh78fhp4s2r2qtqaajb1m32pkfd0l1s9</string>
+	<string>com.googleusercontent.apps.561908997057-5papifm0lhjk3lfvaq3hbnbpf2q5cpe6</string>
 	<key>API_KEY</key>
-	<string>AIzaSyDQcM5m7eR7kVZ2Rl_EQOC-eXQ_h3KYWtc</string>
+	<string>AIzaSyDMaRI2j_EeYnuCElZ58F3BUd85RkK5bBo</string>
 	<key>GCM_SENDER_ID</key>
-	<string>503370235857</string>
+	<string>561908997057</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.example.flutterLoginDemo</string>
+	<string>com.cmjx.iforget</string>
 	<key>PROJECT_ID</key>
-	<string>flutter-login-demo-5f414</string>
+	<string>iforget</string>
 	<key>STORAGE_BUCKET</key>
-	<string>flutter-login-demo-5f414.appspot.com</string>
+	<string>iforget.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
-	<true></true>
+	<false></false>
 	<key>IS_ANALYTICS_ENABLED</key>
 	<false></false>
 	<key>IS_APPINVITE_ENABLED</key>
-	<false></false>
+	<true></true>
 	<key>IS_GCM_ENABLED</key>
 	<true></true>
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:503370235857:ios:fae8bbf356b4bb88</string>
+	<string>1:561908997057:ios:f298bb0e6e19c364</string>
 	<key>DATABASE_URL</key>
-	<string>https://flutter-login-demo-5f414.firebaseio.com</string>
+	<string>https://iforget.firebaseio.com</string>
 </dict>
 </plist>
